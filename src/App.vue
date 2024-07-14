@@ -12,10 +12,16 @@ import Button from '@/components/Button.vue'
       </nav>
     
   </header>
-
+<main class="main">
   <RouterView />
+  </main>
 </template>
 
-<style scoped>
-
+<style lang="scss">
+.main{
+  padding:10px;
+  h1{
+    color:red;
+  }
+}
 </style>
