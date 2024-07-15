@@ -7,7 +7,9 @@ import Button from '@/components/Button.vue'
   <header>
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+       
+        <RouterLink to="/"><Button option="danger">HOME</Button></RouterLink>
+        
         <RouterLink to="/about">About</RouterLink>
       </nav>
     
