@@ -1,29 +1,30 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Button from '@/components/Button.vue'
+import TheNavbar from './components/TheNavbar.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <header>
-
-      <nav>
-       
-        <RouterLink to="/"><Button option="danger">HOME</Button></RouterLink>
-        
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    
-  </header>
-<main class="main">
-  <RouterView />
+<div class="flex overflow-hidden h-[100vh]">
+  <TheNavbar>DUOLINGO</TheNavbar>
+  <main class="overflow-auto w-[60vw] example">
+  <RouterView/>
   </main>
+<TheNavbar>LINGOMY</TheNavbar>
+</div>
 </template>
 
 <style lang="scss">
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 .main{
   padding:10px;
-  h1{
-    color:red;
-  }
+ min-height:100vh;
 }
 </style>
