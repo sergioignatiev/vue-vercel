@@ -1,6 +1,6 @@
 <template>
 
-<div class="navbar w-[20vw] p-6 border-r-2 h-screen bg-slate-400 static top-0 example overflow-auto">
+<div class="navbar w-[20vw] p-6 border-r-2 h-screen  static top-0 example overflow-auto">
 <h1 class="logo"><slot/></h1>
 
 <nav class="flex flex-col">
