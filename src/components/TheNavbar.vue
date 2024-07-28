@@ -31,7 +31,7 @@ const navbar=ref([
 .nav {
     
     padding:2px 20px ;
-    background-color: rgb(14, 15, 15);
+   
    position: sticky;
    top:0;
   width:100%;
@@ -43,6 +43,6 @@ const navbar=ref([
 
 }
 .nav-li {
-    color:white;
+   
 }
 </style>
