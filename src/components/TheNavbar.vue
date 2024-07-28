@@ -1,43 +1,48 @@
 <template>
+    
 
-<div class="navbar w-[20vw] p-6 border-r-2 h-screen  static top-0 example overflow-auto">
-<h1 class="logo"><slot/></h1>
-
-<nav class="flex flex-col">
  
- <TheLink 
- link=""
- icon="https://d35aaqx5ub95lt.cloudfront.net/vendor/784035717e2ff1d448c0f6cc4efc89fb.svg"
- >HOME</TheLink>
-  
-  
-<TheLink
-link="leaderboard"
-icon="https://d35aaqx5ub95lt.cloudfront.net/vendor/ca9178510134b4b0893dbac30b6670aa.svg"
->LEADERBOARD
-</TheLink>
-</nav>
-
-
-    </div>
-
+  <nav class="nav">
+    <ul class="nav-ul">
+        <li class="nav-li"
+         v-for="link in navbar" :key="link.id" :to="link.link">
+        <RouterLink :to="link.link">{{ link.label }}</RouterLink>
+        </li>
+    </ul>
+  </nav>
 </template>
 
-<script  setup>
-import TheLink from './TheLink.vue';
+<script setup>
+import { ref } from 'vue';
 
+
+const navbar=ref([
+    {id:1,link:"/",label:"HOME"},
+    {id:2,link:"/about",label:"ABOUT"}
+    ])
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-
-.logo{
-    color:rgb(69, 236, 69);
-   
-    font-size: 30px;
-    font-family: "Feather Bold";
-    text-transform: lowercase
+.nav-image-title{
+    position:absolute;
+    
+}
+.nav {
+    
+    padding:2px 20px ;
+    background-color: rgb(14, 15, 15);
+   position: sticky;
+   top:0;
+  width:100%;
 }
 
+.nav-ul {
+    display:flex;
+    gap: 10px;
 
+}
+.nav-li {
+    color:white;
+}
 </style>
