@@ -2,7 +2,7 @@
   <div>
     
 <TheNavbar/>
-   
+   <TheMainSwiper/>
     <main>
     <RouterView/>
     </main>
@@ -10,6 +10,7 @@
 </template>
 
 <script  setup>
+import TheMainSwiper from './components/TheMainSwiper.vue';
 import TheNavbar from './components/TheNavbar.vue';
 import { RouterView } from 'vue-router';
 </script>
