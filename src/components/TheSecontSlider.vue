@@ -1,5 +1,5 @@
 <template>
-    {{useCounterStore().count}}
+   
     <swiper
     
     :modules="modules"
@@ -11,14 +11,12 @@
     :effect="{fade:true}"
    :loop=true
     @slideChange="onSlideChange"
-      class="swiper w-[90vw] h-[70vh] rounded-lg bg-pink-900 m-4 "
+      class="swiper w-[300px] h-[300px] rounded-lg  m-4 "
     >
-    <swiper-slide v-for="m in mainImage" :key="m.id">
-       
-<img class='h-[100%] w-[100%]' :src="m.image" alt="ALT">
+   <swiper-slide class="text-center bg-slate-50" v-for="x in swiped" :key="x.id">
+    <img class=" w-full" :src="x.image" :alt="x.title">
 
-<h1 class="text-red-700 text-[30px] z-10">THE DESCRIPTION</h1>
-    </swiper-slide>
+   </swiper-slide>
   
     </swiper>
 
@@ -27,7 +25,7 @@
   <style >
     .swiper-button-next,
           .swiper-button-prev {
-            color:white;
+            color:black;
           }
           .swiper-pagination-bullet{
           
@@ -50,16 +48,9 @@ import 'swiper/css/effect-fade';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useCounterStore } from '@/stores/counter';
+defineProps(['swiped'])
 
 const modules = [ Navigation, Pagination, Scrollbar, A11y,EffectFade ];
-const mainImage=useCounterStore().mainImage
 
 
-
-
-
-
-    
-  
 </script>
